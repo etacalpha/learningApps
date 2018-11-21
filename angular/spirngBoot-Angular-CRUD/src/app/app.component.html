@@ -1,6 +1,17 @@
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-raised-button color="accent" *ngIf="isAuthenticated"
+          (click)="oktaAuth.logout()"[routerLink]="['/home']">Logout
+  </button>
 </mat-toolbar>
 
-<app-car-list></app-car-list>
+<mat-card *ngIf="!isAuthenticated">
+  <mat-card-content>
+    <button mat-raised-button color="accent"
+            (click)="oktaAuth.loginRedirect()">Login
+    </button>
+  </mat-card-content>
+</mat-card>
+
 <router-outlet></router-outlet>
