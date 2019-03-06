@@ -101,7 +101,7 @@ def newGame():
     playerCardFrame.destroy()
     # embedded frame to hold card images
     playerCardFrame = tkinter.Frame(cardFrame, background="green")
-    playerCardFrame.grid(row=2, column=1, sticky='ew', rowspan=2)
+    playerCardFrame.grid(row=2, column=1, sticky='ew', rowspan='2')
 
     resultText.set("")
 
@@ -126,7 +126,7 @@ mainWindow = tkinter.Tk()
 
 # setup screen and flames for the dealer and player
 mainWindow.title("Black Jack")
-mainWindow.geometry("640x480")
+mainWindow.geometry("1320x900")
 mainWindow.configure(background="green")
 
 resultText = tkinter.StringVar()

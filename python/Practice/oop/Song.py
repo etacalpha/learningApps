@@ -3,7 +3,7 @@ class Song:
 
     Attributes:
         title (str): The title of a song
-        artist (Artist): An artist object representing the songs creator.
+        artist (str): The name of the songs creator.
         duration (int): The duration of the song in seconds. May be zero
     """
 
@@ -12,6 +12,11 @@ class Song:
         self.artist = artist
         self.duration = duration
 
+    def get_title(self):
+        return self.title
+
+    name = property(get_title)
+
 
 class Album:
     """ Class to represent an Album, using it's track list
@@ -19,7 +24,7 @@ class Album:
     Attributes:
         name (str): The ame of the album.
         year (int): The year the album was released.
-        artist(Artist): The artist responsible for the album. If not specified,
+        artist(str): The name of the artist responsible for the album. If not specified,
             the artist will default to an artist with the name "Various Artists
         tracks(List[Song]): A list of the songs on the album
 
@@ -31,7 +36,7 @@ class Album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various Artists")
+            self.artist = "Various Artists"
         else:
             self.artist = artist
 
@@ -39,15 +44,19 @@ class Album:
 
     def add_song(self, song, position=None):
         """Adds a song to a track list
+
         Args:
-            song (Song): A song to add
+            song (Song): The title of  a song to add
             position (Optional[int): If specified, the song will be added to that position
                 in the track list - inserting it between other songs if necessary.
         """
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position, song)
+        song_found = find_object(song, self.tracks)
+        if song_found is None:
+            song_found = Song(song, self.artist)
+            if position is None:
+                self.tracks.append(song_found)
+            else:
+                self.tracks.insert(position, song_found)
 
 
 class Artist:
