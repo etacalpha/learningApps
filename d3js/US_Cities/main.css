@@ -32,3 +32,9 @@ body {
     margin-top: 250px;
 }
 
+h1{
+	font-size: 2rem;
+	text-align: center;
+	margin: auto;
+}
+
