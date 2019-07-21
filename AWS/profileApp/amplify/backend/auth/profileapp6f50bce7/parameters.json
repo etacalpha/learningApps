@@ -1,0 +1,68 @@
+{
+    "identityPoolName": "profileapp6f50bce7_identitypool_6f50bce7",
+    "allowUnauthenticatedIdentities": false,
+    "lambdaLogPolicy": "profil_6f50bce7_lambda_log_policy",
+    "openIdLambdaRoleName": "profil_6f50bce7_openid_lambda_role",
+    "openIdRolePolicy": "profil_6f50bce7_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "profil_6f50bce7_openid_lambda_iam_policy",
+    "openIdLogPolicy": "profil_6f50bce7_openid_lambda_log_policy",
+    "userPoolName": "profileapp6f50bce7_userpool_6f50bce7",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "profil6f50bce7_sns-role",
+    "roleExternalId": "profil6f50bce7_role_external_id",
+    "policyName": "profil6f50bce7-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "profil6f50bce7_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "profil6f50bce7_totp_lambda_role",
+    "mfaLambdaLogPolicy": "profil6f50bce7_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "profil6f50bce7_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "profil6f50bce7_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "profil6f50bce7_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "profil6f50bce7_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "profil6f50bce7_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "profileapp6f50bce7",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "default"
+}
