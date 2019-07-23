@@ -1,0 +1,15 @@
+<!-- Bind this form to form object with `[fromGroup]= "formObject"` -->
+<form [formGroup]="myForm">
+  <mat-form-field>
+    <!-- matInput = angular material input, formControlName = the field in the form Object that this input is connected too -->
+    <input matInput placeholder="email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="your message" formControlName="message"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="career" placeholder="career"></mat-select>
+  </mat-form-field>
+</form>

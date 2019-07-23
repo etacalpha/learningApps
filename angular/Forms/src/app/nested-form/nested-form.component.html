@@ -1,0 +1,32 @@
+<form [formGroup]="myForm">
+
+  <mat-form-field>
+    <input matInput placeholder="email" formControlName="email">
+  </mat-form-field>
+
+  <!-- create div for nested form group; use `formGroupName='formGroup'` instead of [formGroup]-->
+  <div formGroupName="cellPhone">
+    <mat-form-field>
+      <input matInput formControlName="area">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="prefix">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="line">
+    </mat-form-field>
+  </div>
+
+  <h4>Home Phone</h4>
+  <div formGroupName="HomePhone">
+    <mat-form-field>
+      <input matInput formControlName="area">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="prefix">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="line">
+    </mat-form-field>
+  </div>
+</form>
